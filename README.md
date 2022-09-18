@@ -11,7 +11,7 @@
 
 # Solution Features
 
-- query a database of banking houses in Germany in a web browser
+- query a database of banking houses (located in Germany) in a web browser
 
    ![screenshot](Bank_Database_MVC/Data/Images/screenshot-query-page.png)
 
