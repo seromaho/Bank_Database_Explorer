@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank_Database_MVC", "Bank_Database_MVC\Bank_Database_MVC.csproj", "{65EA7F82-7D8D-4215-91B9-B3343E5AD0C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EB5E2B4-DC50-4C02-B26A-16B3EE4A7747} = {4EB5E2B4-DC50-4C02-B26A-16B3EE4A7747}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extensions\Extensions.csproj", "{240A4F5D-467A-4A8B-9974-931415A4DDBA}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4EB5E2B4-DC50-4C02-B26A-16B3EE4A7747}"
+	ProjectSection(ProjectDependencies) = postProject
+		{240A4F5D-467A-4A8B-9974-931415A4DDBA} = {240A4F5D-467A-4A8B-9974-931415A4DDBA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

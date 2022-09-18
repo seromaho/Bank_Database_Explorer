@@ -1,15 +1,15 @@
 version: '3.4'
 
 services:
-  bank_database_mvc:
-    image: ${DOCKER_REGISTRY-}bankdatabasemvc
-    build:
-      context: .
-      dockerfile: Bank_Database_MVC/Dockerfile
-    container_name: bank_db_mvc
-    depends_on:
-      - database
-      - cache
+  #bank_database_mvc:
+  #  image: ${DOCKER_REGISTRY-}bankdatabasemvc
+  #  build:
+  #    context: .
+  #    dockerfile: Bank_Database_MVC/Dockerfile
+  #  container_name: bank_db_mvc
+  #  depends_on:
+  #    - database
+  #    - cache
 
   database:
     image: mcr.microsoft.com/mssql/server
@@ -25,3 +25,5 @@ services:
     container_name: bank_db_cache
     ports:
       - "6379:6379"
+    depends_on:
+      - database
