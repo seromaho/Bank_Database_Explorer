@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization; // using Data\Bank_DB\Bank_Tabelle-w-PK.json
+// using Data\Bank_DB\Bank_Tabelle-w-PK.json
+using System.Text.Json.Serialization;
 
 namespace Bank_Database_MVC.Models.Bank_DB
 {

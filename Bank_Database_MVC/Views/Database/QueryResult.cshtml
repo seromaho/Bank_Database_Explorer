@@ -15,7 +15,7 @@
 
     @foreach (Bank_Tabelle dataSet in ViewBag.QueryResult)
     {
-        <tr @*onmouseover="style.backgroundColor = '#4d0000'" onmouseout="style.backgroundColor = document.body.style.backgroundColor"*@>
+        <tr>
             <td>@dataSet.Bezeichnung</td>
             <td>@dataSet.PLZ</td>
             <td>@dataSet.Ort</td>

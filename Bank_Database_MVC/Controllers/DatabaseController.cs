@@ -38,8 +38,6 @@ namespace Bank_Database_MVC.Controllers
         {
             _query = null;
 
-            //string recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
-
             _recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
@@ -105,8 +103,6 @@ namespace Bank_Database_MVC.Controllers
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             _query = null;
-
-            //string recordKey = "Seed_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _recordKey = "Seed_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
@@ -174,8 +170,6 @@ namespace Bank_Database_MVC.Controllers
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             _query = null;
-
-            //string recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
@@ -245,8 +239,6 @@ namespace Bank_Database_MVC.Controllers
 
             _query = null;
 
-            //string recordKey = "NameQuery_" + name + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
-
             _recordKey = "NameQuery_" + name + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
@@ -283,8 +275,6 @@ namespace Bank_Database_MVC.Controllers
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             _query = null;
-
-            //string recordKey = "PLZquery_" + PLZ.ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _recordKey = "PLZquery_" + PLZ.ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
@@ -323,8 +313,6 @@ namespace Bank_Database_MVC.Controllers
 
             _query = null;
 
-            //string recordKey = "OrtQuery_" + ort + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
-
             _recordKey = "OrtQuery_" + ort + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
@@ -362,8 +350,6 @@ namespace Bank_Database_MVC.Controllers
 
             _query = null;
 
-            //string recordKey = "BLZquery_" + BLZ + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
-
             _recordKey = "BLZquery_" + BLZ + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
@@ -400,8 +386,6 @@ namespace Bank_Database_MVC.Controllers
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             _query = null;
-
-            //string recordKey = "BICquery_" + BIC + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
             _recordKey = "BICquery_" + BIC + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
