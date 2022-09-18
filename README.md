@@ -11,18 +11,18 @@
 
 # Solution Features
 
-- query a database of German banking houses in a web browser
+- query a database of banking houses in Germany in a web browser
 
-   ![screenshot](Bank_Database_MVC\Data\Images\screenshot-query-page.png)
+   ![screenshot](Bank_Database_MVC/Data/Images/screenshot-query-page.png)
 
 - get input validation while you type
 
-   ![screenshot](Bank_Database_MVC\Data\Images\screenshot-query-page-input-1.png)
+   ![screenshot](Bank_Database_MVC/Data/Images/screenshot-query-page-input-1.png)
 
 - get the query results from the database
 
-   ![screenshot](Bank_Database_MVC\Data\Images\screenshot-query-result-144-database.png)
+   ![screenshot](Bank_Database_MVC/Data/Images/screenshot-query-result-144-database.png)
 
 - get the query results from a distributed cache
 
-   ![screenshot](Bank_Database_MVC\Data\Images\screenshot-query-result-144-cache.png)
+   ![screenshot](Bank_Database_MVC/Data/Images/screenshot-query-result-144-cache.png)
