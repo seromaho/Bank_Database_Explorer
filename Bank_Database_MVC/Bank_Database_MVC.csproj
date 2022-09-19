@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Bank_DB\Container_Image\" />
     <Folder Include="Data\Images\" />
   </ItemGroup>
 

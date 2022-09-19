@@ -12,13 +12,25 @@ services:
   #    - cache
 
   database:
-    image: mcr.microsoft.com/mssql/server
+    image: ${DOCKER_REGISTRY-}mssql/bank_db:server-latest
+    build:
+      context: ./Bank_Database_MVC/Data/Bank_DB/Container_Image
+      dockerfile: Dockerfile
     container_name: bank_db
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "P@ssw0rd"
     ports:
       - "1433:1433"
+
+  #database:
+  #  image: mcr.microsoft.com/mssql/server
+  #  container_name: bank_db
+  #  environment:
+  #    ACCEPT_EULA: "Y"
+  #    MSSQL_SA_PASSWORD: "P@ssw0rd"
+  #  ports:
+  #    - "1433:1433"
 
   cache:
     image: redis
