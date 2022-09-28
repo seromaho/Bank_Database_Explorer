@@ -25,14 +25,14 @@ namespace Bank_Database_MVC.Data.Bank_DB
         // using Microsoft.EntityFramework & Data\Bank_DB\Bank_TBL-w-PK.json
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
-        //    modelBuilder.Entity<Bank_TBL>().Property(bank_tbl => bank_tbl.Key).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+        //    modelBuilder.Entity<Bank_TBL>().Property(bank_tbl => bank_tbl.Bank_TBL_ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         //    base.OnModelCreating(modelBuilder);
         //}
 
         // using Microsoft.EntityFrameworkCore & Data\Bank_DB\Bank_TBL-w-PK.json
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
-        //    modelBuilder.Entity<Bank_TBL>().Property(bank_tbl => bank_tbl.Key).ValueGeneratedNever();
+        //    modelBuilder.Entity<Bank_TBL>().Property(bank_tbl => bank_tbl.Bank_TBL_ID).ValueGeneratedNever();
         //    base.OnModelCreating(modelBuilder);
         //}
     }

@@ -22,10 +22,10 @@ namespace Bank_Database_MVC.Models.Bank_DB
 
         // using Data\Bank_DB\Bank_TBL-w-PK.json
         //[Key][JsonPropertyName("ID")]
-        //public int Key { get; set; }
+        //public int Bank_TBL_ID { get; set; }
 
         // using Data\Bank_DB\Bank_TBL-w-o-PK.json
         [Key]
-        public int Key { get; set; }
+        public int Bank_TBL_ID { get; set; }
     }
 }
