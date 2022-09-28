@@ -12,7 +12,7 @@ services:
   #    - cache
 
   database:
-    image: ${DOCKER_REGISTRY-}mssql/bank_db:server-latest
+    image: ${DOCKER_REGISTRY-}mssql/bank_db:server-2019-latest
     build:
       context: ./Bank_Database_MVC/Data/Bank_DB/Container_Image
       dockerfile: Dockerfile

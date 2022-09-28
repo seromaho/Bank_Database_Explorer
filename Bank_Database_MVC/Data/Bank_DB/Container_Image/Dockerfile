@@ -1,5 +1,5 @@
 # Set the Base Image for subsequent instructions
-FROM mcr.microsoft.com/mssql/server:latest
+FROM mcr.microsoft.com/mssql/server:2019-latest
 # FROM must be the first instruction in a Dockerfile
 
 # Set the user name to use as the default user and group for the remainder of the current stage
