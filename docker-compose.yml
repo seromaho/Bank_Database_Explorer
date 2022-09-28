@@ -23,8 +23,8 @@ services:
     ports:
       - "1433:1433"
 
-  #database:
-  #  image: mcr.microsoft.com/mssql/server
+  # database:
+  #  image: mcr.microsoft.com/mssql/server:2019-latest
   #  container_name: bank_db
   #  environment:
   #    ACCEPT_EULA: "Y"

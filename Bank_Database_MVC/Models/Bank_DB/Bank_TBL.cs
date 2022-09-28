@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-// using Data\Bank_DB\Bank_Tabelle-w-PK.json
+// using Data\Bank_DB\Bank_TBL-w-PK.json
 using System.Text.Json.Serialization;
 
 namespace Bank_Database_MVC.Models.Bank_DB
 {
-    public class Bank_Tabelle
+    public class Bank_TBL
     {
         public string BLZ { get; set; }
         public int? Merkmal { get; set; }
@@ -20,11 +20,11 @@ namespace Bank_Database_MVC.Models.Bank_DB
         public int? Bankleitzahlloeschung { get; set; }
         public string NachfolgeBLZ { get; set; }
 
-        // using Data\Bank_DB\Bank_Tabelle-w-PK.json
+        // using Data\Bank_DB\Bank_TBL-w-PK.json
         //[Key][JsonPropertyName("ID")]
         //public int Key { get; set; }
 
-        // using Data\Bank_DB\Bank_Tabelle-w-o-PK.json
+        // using Data\Bank_DB\Bank_TBL-w-o-PK.json
         [Key]
         public int Key { get; set; }
     }

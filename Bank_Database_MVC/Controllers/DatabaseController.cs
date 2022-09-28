@@ -21,7 +21,7 @@ namespace Bank_Database_MVC.Controllers
         private readonly Bank_DB_Context _context;
         private readonly IDistributedCache _distributedCache;
         private static int _instanceCounter = 0;
-        private Bank_Tabelle[] _query;
+        private Bank_TBL[] _query;
         private string _recordKey;
         private const string _databaseSource = "data fetched from database";
         private const string _distributedCacheSource = "data fetched from distributed cache";
@@ -40,34 +40,34 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle select modelData;
+                var queryResult = from modelData in _context.Bank_TBL select modelData;
 
                 if (queryResult.Count() == 0)
                 {
-                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_Tabelle-w-o-PK.json"), FileMode.OpenOrCreate);
+                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_TBL-w-o-PK.json"), FileMode.OpenOrCreate);
                     StreamReader streamReader = new StreamReader(fileStream);
 
-                    IEnumerable<Bank_Tabelle> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_Tabelle>>(streamReader.ReadToEnd());
+                    IEnumerable<Bank_TBL> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_TBL>>(streamReader.ReadToEnd());
 
                     streamReader.Close();
                     fileStream.Close();
 
-                    foreach (Bank_Tabelle dataSet in jsonData)
+                    foreach (Bank_TBL dataSet in jsonData)
                     {
                         _context.Add(dataSet);
                     }
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] ON");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] ON");
 
                     _context.SaveChanges();
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] OFF");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] OFF");
 
                     //ViewBag.QueryResult = jsonData.ToArray();
                     //ViewBag.DataSource = _databaseSource;
@@ -106,34 +106,34 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "Seed_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle select modelData;
+                var queryResult = from modelData in _context.Bank_TBL select modelData;
 
                 if (queryResult.Count() == 0)
                 {
-                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_Tabelle-w-o-PK.json"), FileMode.OpenOrCreate);
+                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_TBL-w-o-PK.json"), FileMode.OpenOrCreate);
                     StreamReader streamReader = new StreamReader(fileStream);
 
-                    IEnumerable<Bank_Tabelle> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_Tabelle>>(streamReader.ReadToEnd());
+                    IEnumerable<Bank_TBL> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_TBL>>(streamReader.ReadToEnd());
 
                     streamReader.Close();
                     fileStream.Close();
 
-                    foreach (Bank_Tabelle dataSet in jsonData)
+                    foreach (Bank_TBL dataSet in jsonData)
                     {
                         _context.Add(dataSet);
                     }
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] ON");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] ON");
 
                     _context.SaveChanges();
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] OFF");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] OFF");
 
                     ViewBag.QueryResult = jsonData.ToArray();
                     ViewBag.DataSource = _databaseSource;
@@ -173,34 +173,34 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "Database_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle select modelData;
+                var queryResult = from modelData in _context.Bank_TBL select modelData;
 
                 if (queryResult.Count() == 0)
                 {
-                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_Tabelle-w-o-PK.json"), FileMode.OpenOrCreate);
+                    FileStream fileStream = new FileStream(Path.Combine(Directory.GetCurrentDirectory(), "Data", "Bank_DB", "Bank_TBL-w-o-PK.json"), FileMode.OpenOrCreate);
                     StreamReader streamReader = new StreamReader(fileStream);
 
-                    IEnumerable<Bank_Tabelle> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_Tabelle>>(streamReader.ReadToEnd());
+                    IEnumerable<Bank_TBL> jsonData = JsonSerializer.Deserialize<IEnumerable<Bank_TBL>>(streamReader.ReadToEnd());
 
                     streamReader.Close();
                     fileStream.Close();
 
-                    foreach (Bank_Tabelle dataSet in jsonData)
+                    foreach (Bank_TBL dataSet in jsonData)
                     {
                         _context.Add(dataSet);
                     }
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] ON");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] ON");
 
                     _context.SaveChanges();
 
                     // doesn't work with Entity Framework Core ???
-                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_Tabelle] OFF");
+                    //_context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [Bank_TBL] OFF");
 
                     ViewBag.QueryResult = jsonData.ToArray();
                     ViewBag.DataSource = _databaseSource;
@@ -241,11 +241,11 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "NameQuery_" + name + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle
+                var queryResult = from modelData in _context.Bank_TBL
                                   where modelData.Bezeichnung.ToUpper().Contains(name.ToUpper()) || modelData.Kurzbezeichnung.ToUpper().Contains(name.ToUpper())
                                   select modelData;
 
@@ -278,11 +278,11 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "PLZquery_" + PLZ.ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle
+                var queryResult = from modelData in _context.Bank_TBL
                                   where modelData.PLZ == PLZ
                                   select modelData;
 
@@ -315,11 +315,11 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "OrtQuery_" + ort + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle
+                var queryResult = from modelData in _context.Bank_TBL
                                   where modelData.Ort.ToUpper().Contains(ort.ToUpper())
                                   select modelData;
 
@@ -352,11 +352,11 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "BLZquery_" + BLZ + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle
+                var queryResult = from modelData in _context.Bank_TBL
                                   where modelData.BLZ == BLZ
                                   select modelData;
 
@@ -389,11 +389,11 @@ namespace Bank_Database_MVC.Controllers
 
             _recordKey = "BICquery_" + BIC + "_" + DateTime.Now.ToString("yyyyMMdd_hh");
 
-            _query = await _distributedCache.GetRecordAsync<Bank_Tabelle[]>(_recordKey);
+            _query = await _distributedCache.GetRecordAsync<Bank_TBL[]>(_recordKey);
 
             if (_query is null)
             {
-                var queryResult = from modelData in _context.Bank_Tabelle
+                var queryResult = from modelData in _context.Bank_TBL
                                   where modelData.BIC.ToUpper().Contains(BIC.ToUpper())
                                   select modelData;
 

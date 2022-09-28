@@ -12,17 +12,17 @@ GO
 
 -- Connect to the 'Bank_DB' database to run this snippet
 USE [Bank_DB]
--- Create a new table called 'Bank_Tabelle' in schema 'dbo'
+-- Create a new table called 'Bank_TBL' in schema 'dbo'
 -- Drop the table if it already exists
-IF  OBJECT_ID('dbo.Bank_Tabelle', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Bank_Tabelle]
+IF  OBJECT_ID('dbo.Bank_TBL', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Bank_TBL]
 GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- Create the table in the specified schema
-CREATE TABLE [dbo].[Bank_Tabelle]
+CREATE TABLE [dbo].[Bank_TBL]
 (
 	-- [Key] [int] IDENTITY(1,1) NOT NULL,
 	[BLZ] [nvarchar](max) NULL,
@@ -44,12 +44,12 @@ GO
 
 -- Connect to the 'Bank_DB' database to run this snippet
 USE [Bank_DB]
--- Import table data into table 'Bank_Tabelle' from the specified file
+-- Import table data into table 'Bank_TBL' from the specified file
 -- Skip the header (first row)
 -- Use a pipe (|) as the field terminator
 -- Use the default row terminator: the newline character (\n)
-BULK INSERT [Bank_Tabelle]
-FROM '/tmp/Bank_Tabelle-w-o-PK.csv'
+BULK INSERT [Bank_TBL]
+FROM '/tmp/Bank_TBL-w-o-PK.csv'
 WITH
 (
 	-- CODEPAGE = 'ACP',
@@ -61,9 +61,9 @@ GO
 -- Connect to the 'Bank_DB' database to run this snippet
 USE [Bank_DB]
 -- Add a PRIMARY KEY identity column
-ALTER TABLE [dbo].[Bank_Tabelle] ADD [Key] INT IDENTITY(1,1) NOT NULL
+ALTER TABLE [dbo].[Bank_TBL] ADD [Key] INT IDENTITY(1,1) NOT NULL
 GO
-ALTER TABLE [dbo].[Bank_Tabelle] ADD CONSTRAINT [PK_Bank_Tabelle] PRIMARY KEY CLUSTERED
+ALTER TABLE [dbo].[Bank_TBL] ADD CONSTRAINT [PK_Bank_TBL] PRIMARY KEY CLUSTERED
 (
 	[Key] ASC
 )
